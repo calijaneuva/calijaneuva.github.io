@@ -1,4 +1,7 @@
 <html>
+<head>
+    <title>Countdown Surprise</title>
+</head>
 <body>
     <h1>Get Ready for a Surprise...</h1>
 
@@ -17,7 +20,9 @@
         if (i <= 0) { // double "==" is equality comparison
                 countobj.innerHTML = "<b><font size='+7'>My Giraffe Says HEY!</b>";
                 document.body.style.backgroundColor = 'pink';
-                document.getElementById("img").src = "giraffesmiling.jpeg";
+                var imageElement = document.createElement("img");
+                imageElement.src = "giraffesmiling.jpeg";
+                document.body.appendChild(imageElement);
             }
 }
        </script>
