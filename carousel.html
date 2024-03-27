@@ -1,23 +1,44 @@
+<html>
+  <body>
 <head>
   <h1>Browse photos of giraffe habitats!</h1>
 </head>
-  <img id="cimage" height="600" src="" alt="Image Changes">
+
+<style>
+#cimage {  display: block;
+            margin: 0 auto;
+            height: 400px; 
+        }
+    </style>
+ 
+<img id="cimage" height="600" src="" alt="Image Changes">
+
+  <button onclick="nextImage()">Next</button>
+
 <script>
     
     var carouselImage = document.getElementById("cimage");
     var currentIndex = 0;
-    var images = [ 'habitat1.jpeg',
+    var images = [ 
+                'habitat1.jpeg',
                 'habitat2.jpeg',
-                'habitat3.jpeg' 
-                'habitat4.jpeg'
+                'habitat3.jpeg',
+                'habitat4.jpeg',
                 'habitat5.webp'
            ] ;
-  function changeImage() {
-    carouselImage.src = images[currentIndex]
-    currentIndex = (currentIndex + 1) % images.length
+  function showImage(index) {
+    carouselImage.src = images[index]
+    currentIndex = index;
   }
   
-  changeImage();
-  setInterval(changeImage, 4000);
+ function nextImage() {
+   currentIndex = (currentIndex + 1) % images.length;
+   showImage(currentIndex);
+ }
+
+  showImage(currentIndex);
   
 </script>
+
+</body>
+</html>
