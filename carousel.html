@@ -10,8 +10,11 @@
                 'habitat2.jpeg',
                 'habitat3.jpeg' 
                 'habitat4.jpeg'
-                'habitat5.webp'] ;
-
-  carouselImage.src = ...;
+                'habitat5.webp'
+           ] ;
+  function changeImage() {
+    carouselImage.src = images[currentIndex]
+    currentIndex = (currentIndex + 1) % images.length
+  }
   
 </script>
